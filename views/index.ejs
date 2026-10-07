@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= title %>
+        Article Views listázása
     </title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    <h1><%= title %></h1>
-    Hello EJS!
+    <h1>Article Views listázása</h1>
+
+    <table>
+        <thead>
+            <th>Title</th>
+            <th>Views</th>
+        </thead>
+
+        <tbody>
+            <% articleViews.forEach(a=> { %>
+                <tr class="<%= a.views > 1000 ? 'popular':'' %>">
+                    <td>
+                        <a href="<%= a.url %>">
+                            <%= a.title %>
+                        </a>
+                    </td>
+                    <td>
+                        <%= a.views %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    <br><br>
+
+    <a href="/filter">SZűrés</a><br>
+    <a href="/new">Új adat felvétele</a>
+
+
+
 </body>
+
 </html>

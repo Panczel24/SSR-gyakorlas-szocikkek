@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New view data</title>
+</head>
+
+<body>
+    <form action="" method="post">
+
+        <input type="text" name="title">
+        <input name="url">
+        <input type="number" name="views">
+        <button type="submit">Új adat</button>
+
+
+    </form>
+
+    <% if(locals.success){ %>
+        <p style="color:green">Sikeres létrehozás</p>
+        <% } %>
+</body>
+
+</html>
